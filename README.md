@@ -40,6 +40,10 @@ search.php?q=hogehoge などのように、クエリと呼ばれるパラメー�
 PHPで動的コンテンツを配信できるLAMP環境を構築
 publicディレクトリ以下で作業してもらう
 
+```
+ ntpdate -s ntp.nc.u-tokyo.ac.jp
+```
+
 # 演習1.POST/GETでデータのやりとり
 
 ## HTMLでフォーム部分作成
