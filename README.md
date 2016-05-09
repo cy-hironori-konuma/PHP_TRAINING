@@ -40,6 +40,7 @@ search.php?q=hogehoge などのように、クエリと呼ばれるパラメー�
 PHPで動的コンテンツを配信できるLAMP環境を構築
 publicディレクトリ以下で作業してもらう
 
+* 日付と時刻を NTP サーバーと同期する
 ```
  ntpdate -s ntp.nc.u-tokyo.ac.jp
 ```
