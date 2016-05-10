@@ -79,4 +79,5 @@ Query OK, 0 rows affected (0.00 sec)
 
 ```
 mysql> INSERT INTO bbs (name, comment) values('konuma', 'これがコメント欄に表示されれば成功です。');
+mysql> INSERT INTO bbs (name, comment) values('hironori', 'これもコメント欄に表示してくださいね。');
 ```
