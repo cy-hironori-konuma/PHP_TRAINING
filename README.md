@@ -78,6 +78,5 @@ Query OK, 0 rows affected (0.00 sec)
 ## レコード作成
 
 ```
-mysql> INSERT INTO bbs (name, comment) values('konuma', 'これがコメント欄に
-表示されれば成功です。');
+mysql> INSERT INTO bbs (name, comment) values('konuma', 'これがコメント欄に表示されれば成功です。');
 ```
