@@ -53,7 +53,8 @@ vagrant up
 
 * 日付と時刻を NTP サーバーと同期する
 ```
- ntpdate -s ntp.nc.u-tokyo.ac.jp
+vagrant ssh
+ntpdate -s ntp.nc.u-tokyo.ac.jp
 ```
 
 # LESSON-1 POST/GETでデータのやりとり
