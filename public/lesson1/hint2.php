@@ -1,27 +1,29 @@
+<?php
+$name    = $_POST['name'];
+$comment = $_POST['comment'];
+?>
+
 <!DOCTYPE HTML>
 <html lang="ja-JP">
     <head>
         <meta charset="UTF-8">
-        <title>ひとこと掲示板</title>
+        <title>演習1</title>
     </head>
     <body>
-        <h1>ひとこと掲示板</h1>
+        <h1>演習1</h1>
 
-        <form action="index.php" method="post">
+        <form action="hint2.php" method="post">
             <p>
                 <label for="input-name">名前</label>
                 <input id="input-name" type="text" name="name">
             </p>
             <p>
-                <label for="input-comment">ひとこと</label>
+                <label for="input-comment">コメント</label>
                 <input id="input-comment" type="text" name="comment">
             </p>
             <input type="submit" name="submit" value="送信">
         </form>
 
-        <ul>
-            <li>konuma : 動的なコンテンツを配信する仕組みを覚えて下さい。 [2016/05/02 13:27:00]</li>
-            <li>konuma : 今日はPHPの授業をします。  [2016/05/02 13:26:00]</li>
-        </ul>
+        <p>konuma : まずは、POSTとGETでのデータ送受信について演習です。</p>
     </body>
 </html>
