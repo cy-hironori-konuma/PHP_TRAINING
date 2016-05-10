@@ -56,3 +56,28 @@ publicディレクトリ以下で作業してもらう
 
 PHPでPOSTパラメーターとGETパラメーターを受け取れるようにする
 受け取ったデータをHTML内に表示する
+
+# 演習2.簡易掲示板を作成
+
+## テーブル作成
+
+```
+$ vagrant ssh
+$ mysql
+
+mysql> CREATE DATABASE training DEFAULT CHARACTER SET utf8;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use training;
+Database changed
+
+mysql> CREATE TABLE training.bbs (id int(11) NOT NULL AUTO_INCREMENT, name varchar(255) NOT NULL, comment varchar(255) NOT NULL, PRIMARY KEY (id));
+Query OK, 0 rows affected (0.00 sec)
+```
+
+## レコード作成
+
+```
+mysql> INSERT INTO bbs (name, comment) values('konuma', 'これがコメント欄に
+表示されれば成功です。');
+```
