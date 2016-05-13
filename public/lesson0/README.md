@@ -36,14 +36,15 @@ PHPはサーバサイド・スクリプト言語として利用されており�
 
 > <?php  
 > ?>  
+
 PHP処理の開始と終了を表す  
-開始から終了までは、複数行に渡ってもOK
-PHPの処理部分は複数あってもOK
+開始から終了までは、複数行に渡ってもOK  
+PHPの処理部分は複数あってもOK  
 
-> $string = 'Hello World'
-文字列"Hello World"を$string変数に代入する
+> $string = 'Hello World';  
 
-PHP では、変数名は常にドル記号で始まります
+文字列"Hello World"を$string変数に代入する  
+PHP では、変数名は常にドル記号で始まります  
 
 JavaScriptでは、
 ```JavaScript
@@ -51,12 +52,15 @@ var string = 'Hello World';
 ```
 と表現できます。
 
-> echo $string  
-echo は、後ろに続く文字列を出力するPHPの言語構造（関数みたいなもの）  
-$string変数に格納されている文字列を出力します。
+> echo $string;
 
-**$_SERVER** : サーバ変数と呼ばれる、スーパーグローバル変数の一つ  
-$_SERVER['HTTP_USER_AGENT'] にユーザーエージェント文字列が代入されています。
+echo は、後ろに続く文字列を出力するPHPの言語構造（関数みたいなもの）  
+$string変数に格納されている文字列を出力します
+
+> echo $_SERVER['HTTP_USER_AGENT'];
+
+$_SERVER['HTTP_USER_AGENT'] にユーザーエージェント文字列が格納されているので、それを出力します  
+**$_SERVER** は、サーバ変数と呼ばれる、スーパーグローバル変数の一つ
 
 ## スーパーグローバル変数とは  
 
