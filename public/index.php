@@ -55,7 +55,7 @@ if ($ticket === $_SESSION['ticket'] && !empty($name) && !empty($comment)) {
 // DBの掲示板テーブルを参照して投稿一覧を取得する
 // 投稿一覧を取得するSQLを作成する
 // 掲示板テーブル（bbs）から名前（name）とコメント（comment）をID（id）の降順で取得する
-$query = 'SELECT name, comment FROM bbs ORDER BY id desc';
+$query = 'SELECT id, name, comment FROM bbs ORDER BY id desc';
 
 // SQLを実行して結果を配列形式で取得する
 $result = mysqli_query($connection, $query);
@@ -79,7 +79,7 @@ $_SESSION['ticket'] = md5(uniqid().mt_rand());
     <body>
         <h1>簡易掲示板</h1>
 
-        <form name="lesson" action="lesson3.php" method="post">
+        <form name="lesson" action="index.php" method="post">
             <p>
                 <label for="input-name">名前</label>
                 <input id="input-name" type="text" name="name" maxlength="50">
@@ -95,7 +95,7 @@ $_SESSION['ticket'] = md5(uniqid().mt_rand());
         <?php if (!is_null($posts)) { ?>
         <ul>
             <?php foreach ($posts as $post) { ?>
-            <li><?= $post['name'].' : '.$post['comment'] ?></li>
+            <li><a href="detail.php?id=<?= $post['id'] ?>"><?= $post['name'].' : '.$post['comment'] ?></li>
             <?php } ?>
         </ul>
         <?php } ?>
