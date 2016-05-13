@@ -58,7 +58,7 @@ Webページには**静的コンテンツ**と**動的コンテンツ**があり
 
 ## サーバサイドタイプの例  
 
-![動的コンテンツ生成の仕組み](dynamic_content.jpg)
+![動的コンテンツ生成の仕組み](https://raw.githubusercontent.com/cy-hironori-konuma/PHP_TRAINING/master/img/dynamic_content.jpg)
 
 ```
 https://php-training.jp/lesson.php?id=1
