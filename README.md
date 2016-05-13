@@ -25,11 +25,11 @@ SublimeText使ってる。
 PHP書ける  
 (Vagrantが開発環境, VagrantにPHP, MySQLとかinstallしている)
 
-
 # 当日の流れ  
 
 - PHPの概要
 - PHPが動く環境を整える
+- PHPの言語仕様の説明
 - 静的なコンテンツと動的なコンテンツの違い
 - 基本的な動的コンテンツの仕組み
 - 環境構築
