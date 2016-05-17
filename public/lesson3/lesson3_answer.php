@@ -1,5 +1,7 @@
 <?php
 // 入力値を取得する
+$name    = isset($_POST['name']) ? $_POST['name'] : '';
+$comment = isset($_POST['comment']) ? $_POST['comment'] : '';
 
 // DBに接続する
 // IP:localhost, USER:root, PASSWORD:root, DATABASE:training
@@ -9,17 +11,20 @@ $connection = mysqli_connect('localhost', 'root', 'root', 'training');
 mysqli_set_charset($connection, 'utf8');
 
 // 名前とコメントの両方が入力されているか判定
-
+if (!empty($name) && !empty($comment)) {
     // 入力があった場合はDBに登録する
     // 登録するためのSQLクエリを準備する
     // 掲示板テーブル（bbs）に名前（name）とコメント（comment）を追加する
+    $query = 'INSERT INTO bbs (name, comment) VALUES(\''.$name.'\', \''.$comment.'\')';
 
     // SQLを実行してDBに登録する
+    mysqli_query($connection, $query);
+}
 
 // DBの掲示板テーブルを参照して投稿一覧を取得する
 // 投稿一覧を取得するSQLを作成する
 // 掲示板テーブル（bbs）から名前（name）とコメント（comment）をID（id）の降順で取得する
-$query = 'SELECT name, comment FROM bbs ORDER BY id desc';
+$query = 'SELECT name, comment FROM bbs ORDER BY id DESC';
 
 // SQLを実行して結果を配列形式で取得する
 $result = mysqli_query($connection, $query);
@@ -27,7 +32,6 @@ $posts  = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 // DB接続を閉じる
 mysqli_close($connection);
-
 ?>
 
 <!DOCTYPE HTML>
@@ -39,22 +43,16 @@ mysqli_close($connection);
     <body>
         <h1>演習3</h1>
 
-        <form name="lesson" action="hint1.php" method="post">
-            <p>
-                <label for="input-name">名前</label>
-                <input id="input-name" type="text" name="name" maxlength="50">
-            </p>
-            <p>
-                <label for="input-comment">コメント</label>
-                <input id="input-comment" type="text" name="comment" maxlength="50">
-            </p>
+        <form action="lesson3.php" method="post">
+            名前 : <input type="text" name="name">
+            コメント : <input type="text" name="comment">
             <input type="submit" name="submit" value="送信">
         </form>
 
         <?php if (!is_null($posts)) { ?>
         <ul>
             <?php foreach ($posts as $post) { ?>
-            <li><?= $post['name'].' : '.$post['comment'] ?></li>
+            <li><?php echo $post['name']).' : '.$post['comment']; ?></li>
             <?php } ?>
         </ul>
         <?php } ?>

@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="ja-JP">
     <head>
-        <title>Sample</title>
+        <meta charset="UTF-8">
+        <title>sample</title>
     </head>
     <body>
 
     <?php
     $string = 'Hello World';
     echo $string;
-    echo $_SERVER['HTTP_USER_AGENT'];
     ?>
 
     </body>

@@ -1,4 +1,14 @@
 <?php
+// 関数定義
+/**
+ * htmlspecialcharsのエイリアス
+ * @param  string $string htmlspecialcharsを適用する文字列
+ * @return string         htmlspecialchars適用後の文字列（シングル・ダブルクォーテーションも変換, UTF-8に変換）
+ */
+function h($string) {
+    return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
+}
+
 // 入力値を取得する
 $id = isset($_GET['id']) ? (int)$_GET['id'] : null;
 
@@ -50,8 +60,8 @@ $comment = is_null($comment) ? '' : $comment;
     </head>
     <body>
         <h1>簡易掲示板 投稿詳細</h1>
-        <p>名前 : <?= $name ?></p>
-        <p>コメント : <?= $comment ?></p>
+        <p>名前 : <?= h($name); ?></p>
+        <p>コメント : <?= h($comment); ?></p>
         <a href="/">トップ</a>
     </body>
 </html>

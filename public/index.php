@@ -1,4 +1,14 @@
 <?php
+// 関数定義
+/**
+ * htmlspecialcharsのエイリアス
+ * @param  string $string htmlspecialcharsを適用する文字列
+ * @return string         htmlspecialchars適用後の文字列（シングル・ダブルクォーテーションも変換, UTF-8に変換）
+ */
+function h($string) {
+    return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
+}
+
 // 入力値を取得する
 $name    = isset($_POST['name']) ? $_POST['name'] : '';
 $comment = isset($_POST['comment']) ? $_POST['comment'] : '';
@@ -22,12 +32,7 @@ mysqli_set_charset($connection, "utf8");
 session_start();
 
 // リロードされていないか、名前とコメントの両方が入力されているか判定
-if ($ticket === $_SESSION['ticket'] && !empty($name) && !empty($comment)) {
-    // 入力値を安全な文字列に直す
-    // htmlタグを文字列として扱うように変換
-    $name    = htmlspecialchars($name);
-    $comment = htmlspecialchars($comment);
-    
+if (isset($_SESSION['ticket']) && $ticket === $_SESSION['ticket'] && !empty($name) && !empty($comment)) {
     // 前後のスペース（全角と半角）を削除
     $name    = trim(mb_convert_kana($name, 's', 'UTF-8'));
     $comment = trim(mb_convert_kana($comment, 's', 'UTF-8'));
@@ -88,14 +93,14 @@ $_SESSION['ticket'] = md5(uniqid().mt_rand());
                 <label for="input-comment">コメント</label>
                 <input id="input-comment" type="text" name="comment" maxlength="50">
             </p>
-            <input type="hidden" name="ticket" value="<?= $_SESSION['ticket'] ?>">
+            <input type="hidden" name="ticket" value="<?= h($_SESSION['ticket']); ?>">
             <input type="submit" name="submit" value="送信">
         </form>
 
         <?php if (!is_null($posts)) { ?>
         <ul>
             <?php foreach ($posts as $post) { ?>
-            <li><a href="detail.php?id=<?= $post['id'] ?>"><?= $post['name'].' : '.$post['comment'] ?></li>
+            <li><a href="detail.php?id=<?= h($post['id']); ?>"><?= h($post['name']).' : '.h($post['comment']); ?></li>
             <?php } ?>
         </ul>
         <?php } ?>

@@ -4,12 +4,12 @@
 
 # 目的  
 
-* PHPのさわりを理解してもらう
+* PHPとは何か何ができるのか初歩的なところを理解してもらう
 * 動的なコンテンツを配信する仕組みを理解する
 
 # 事前事項
 
-LAMP環境構築は中村さんのLinux研修で実施ずみ  
+LAMP環境構築は中村さんのLinux研修で実施済み  
 
 ### 非エンジニア
 
@@ -32,7 +32,6 @@ PHP書ける
 - PHPの言語仕様の説明
 - 静的なコンテンツと動的なコンテンツの違い
 - 基本的な動的コンテンツの仕組み
-- 環境構築
 - LESSON-1 POST/GETでデータのやりとり
  - HTMLでフォーム部分作成
  - POST/GETで受け取ったデータを表示
@@ -123,6 +122,3 @@ Query OK, 0 rows affected (0.00 sec)
 mysql> INSERT INTO bbs (name, comment) values('konuma', 'これがコメント欄に表示されれば成功です。');
 mysql> INSERT INTO bbs (name, comment) values('hironori', 'これもコメント欄に表示してくださいね。');
 ```
-
-# LESSON-3 簡易掲示板のデータ登録
-
