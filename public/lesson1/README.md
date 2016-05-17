@@ -18,7 +18,7 @@ Webページには**静的コンテンツ**と**動的コンテンツ**があり
 - リクエストパラメーターでDBを参照してHTMLを生成する  
 - 簡易掲示板  
 
-ホワイトボードで説明します。
+↑↑ここらへんはホワイトボードで説明します。
 
 # HTTPリクエストメソッド
 
@@ -35,10 +35,16 @@ htmlからリクエストパラメーターを送るには、下記の属性をf
  - GET : パラメーターがURLに付随して渡される
  - POST : パラメーターが本文（本体）として送信される
 
+GETの例
+```html
+<a href="sample.php?msg=hoge">リンク</a>
+```
+
+POSTの例
 ```html
 <form action="sample.php" method="post">
     <input type="text" name="msg" value="hoge">
-    <input type="submit">
+    <input type="submit" value="送信">
 </form>
 ```
 
@@ -74,7 +80,7 @@ http://php.net/manual/ja/function.isset.php
 ```php
 // $msg = $_GET['msg'];
 
-if (isset($_GET['msg']) {
+if (isset($_GET['msg'])) {
     $msg = $_GET['msg'];
 } else {
     $msg = '';
@@ -85,7 +91,7 @@ echo $msg;
 
 # 演習1
 
-問題 : form要素を完成させて、名前とコメントをPOSTメソッドで送信すること
-　　   名前とコメントが両方入力された場合、p要素に指定された形式で受け取った名前とコメントを表示させること
-時間 : 10~15分
+問題 : form要素を完成させて、名前とコメントをPOSTメソッドで送信すること  
+　　   名前とコメントが両方入力された場合、p要素に指定された形式で受け取った名前とコメントを表示させること  
+時間 : 10~15分  
 ファイル : lesson1.html

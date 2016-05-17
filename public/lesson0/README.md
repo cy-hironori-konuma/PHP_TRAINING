@@ -97,22 +97,22 @@ PHP は 8 種類の基本型をサポートします。
 
 ### 4 種類のスカラー型
 
-論理値 (boolean)
-整数 (integer)
-浮動小数点数 (float, double)
+論理値 (boolean)  
+整数 (integer)  
+浮動小数点数 (float, double)  
 文字列 (string)
 
 JavaScriptとの違いは？
 
 ### 2 種類の複合型
 
-配列 (array)
-オブジェクト (object)
+配列 (array)  
+オブジェクト (object)  
 
 ### 2 種類の特別な型
 
-リソース (resource)
-ヌル (NULL)
+リソース (resource)  
+ヌル (NULL)  
 
 ## 変数のスコープ
 
@@ -165,7 +165,7 @@ PHPには、あらかじめ定義されている変数があるよ。
 - $argc : スクリプトに渡された引数の数
 - $argv : スクリプトに渡された引数の配列
 
-UserAgentを表示してみる
+例）UserAgentを表示してみる
 ```php
 <?php
 echo $_SERVER['HTTP_USER_AGENT'];
@@ -259,7 +259,7 @@ foreach ($arr as $value) {
     echo $value;  // abcが出力される
 }
 foreach ($arr as $key => $value) {
-    echo $key.' : '.$value.PHP_EOL;
+    echo $key.':'.$value;  // 0:a, 1:b, 2:c が出力される
 }
 ```
 

@@ -1,4 +1,12 @@
 <?php
+/*
+演習3
+問題 : 入力した名前とコメントをbbsテーブルに登録させること  
+　　   掲示板の投稿一覧をリスト形式で表示させること  
+時間 : 10~15分  
+ファイル : lesson3.php
+*/
+
 // 入力値を取得する
 $name    = isset($_POST['name']) ? $_POST['name'] : '';
 $comment = isset($_POST['comment']) ? $_POST['comment'] : '';
