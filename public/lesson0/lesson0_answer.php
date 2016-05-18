@@ -5,7 +5,7 @@
 時間 : 5~10分
 
 ■ヒント1 連想配列
-$types = [
+$types = array(
     'boolean'  => '論理値',
     'integer'  => '整数',
     'float'    => '浮動小数点',
@@ -15,7 +15,7 @@ $types = [
     'object'   => 'オブジェクト',
     'resource' => 'リソース',
     'NULL'     => 'ヌル'
-];
+);
 
 ■ヒント2 制御構造
 foreachを使う
